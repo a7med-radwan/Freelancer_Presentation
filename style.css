@@ -1,0 +1,230 @@
+/* ========================================================
+   HIRELAND PRESENTATION - CLEAN MINIMALIST DESIGN SYSTEM
+   Theme: Crisp Pure White (#ffffff) + Calm Canvas (#f3f4f8) + Royal Violet (#7c3aed)
+   Zero Scrolling Guarantee - Everything Fits Within Viewport
+   ======================================================== */
+
+:root {
+    --bg-canvas: #f3f4f8;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --card-hover-border: #cbd5e1;
+    --brand-violet: #7c3aed;
+    --brand-violet-hover: #6d28d9;
+    --brand-violet-light: #f5f3ff;
+    --brand-violet-border: #ddd6fe;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+    --shadow-image: 0 4px 14px -2px rgba(15, 23, 42, 0.08);
+    --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Cairo', sans-serif;
+    position: relative;
+    user-select: none;
+}
+
+/* Slide Deck Engine & Zero-Scroll Strict Constraints */
+.slide-section {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px) scale(0.99);
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.35s;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.slide-section.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.slide-section.slide-prev {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20px) scale(0.99);
+}
+
+/* Deck Cards */
+.deck-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1.35rem;
+    box-shadow: var(--shadow-card);
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 1.35rem 1.6rem;
+    transition: border-color 0.2s ease;
+}
+
+.deck-card-subtle {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.85rem;
+    padding: 0.65rem 1rem;
+}
+
+/* Full Image Showcase Frame */
+.image-showcase-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.95rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    box-shadow: var(--shadow-image);
+}
+
+.image-showcase-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 0.6rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pill Tabs */
+.tab-pill-btn {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    border-radius: 9999px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.tab-pill-btn:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    transform: translateY(-1px);
+}
+
+.tab-pill-btn.active {
+    background: var(--brand-violet);
+    border-color: var(--brand-violet);
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.28);
+}
+
+/* Enhanced High-Readability Pitch Points */
+.pitch-point {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.8rem;
+    padding: 0.65rem 1rem;
+    font-size: 0.94rem;
+    color: #334155;
+    line-height: 1.6;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.pitch-point:hover {
+    border-color: #cbd5e1;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.pitch-point strong {
+    color: #0f172a;
+    font-weight: 800;
+}
+
+/* Pagination Dots */
+.dot-indicator {
+    width: 9px;
+    height: 9px;
+    border-radius: 9999px;
+    background-color: #cbd5e1;
+    border: none;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.dot-indicator:hover {
+    background-color: #94a3b8;
+    transform: scale(1.2);
+}
+
+.dot-indicator.active {
+    width: 24px;
+    background-color: var(--brand-violet);
+    border-radius: 9999px;
+}
+
+/* Modal Animations */
+.modal-overlay {
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+.modal-overlay.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scaleUp {
+    animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Keypad keys */
+kbd {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
