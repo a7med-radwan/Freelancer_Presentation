@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hireland | العرض الختامي لمسار العمل الحر - UCAS</title>
-    <meta name="description" content="العرض التقديمي الختامي لمسار العمل الحر بحاضنة UCAS - استعراض رحلة العمل الحر وتأسيس منصة Hireland.">
-    
-    <!-- Google Fonts: Cairo & Outfit -->
+    <meta name="description"
+        content="العرض التقديمي الختامي لمسار العمل الحر بحاضنة UCAS - استعراض رحلة العمل الحر وتأسيس منصة Hireland.">
+
+    <!-- Google Fonts: Alexandria & Plus Jakarta Sans (Modern & Highly Legible) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,40 +36,46 @@
                         }
                     },
                     fontFamily: {
-                        cairo: ['Cairo', 'sans-serif'],
-                        outfit: ['Outfit', 'sans-serif'],
+                        cairo: ['Alexandria', 'Tajawal', 'sans-serif'],
+                        alexandria: ['Alexandria', 'sans-serif'],
+                        outfit: ['Plus Jakarta Sans', 'Outfit', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    
+
     <!-- Custom Clean Minimalist Style Sheet -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#f3f4f8] text-slate-900 font-cairo antialiased overflow-hidden select-none">
+
+<body class="bg-[#f3f4f8] text-slate-900 font-alexandria antialiased overflow-hidden select-none">
 
     <!-- Top Presentation Header -->
-    <header class="relative z-30 h-16 bg-white border-b border-slate-200 px-6 md:px-10 flex items-center justify-between shadow-sm">
-        
+    <header
+        class="relative z-30 h-14 sm:h-16 bg-white border-b border-slate-200 px-3 sm:px-6 md:px-10 flex items-center justify-between shadow-sm">
+
         <!-- Left Section: Action & Institution -->
-        <div class="flex items-center gap-3 md:gap-4">
-            <button onclick="openModal('links-modal')" class="tab-pill-btn active">
+        <div class="flex items-center gap-2 sm:gap-4">
+            <button onclick="openModal('links-modal')" class="tab-pill-btn active py-1 px-2.5 sm:py-1.5 sm:px-3.5 text-xs">
                 <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                <span>دليل الروابط الحية</span>
+                <span class="hidden xs:inline sm:inline">دليل الروابط الحية</span>
+                <span class="inline xs:hidden sm:hidden">الروابط</span>
             </button>
-            <span class="hidden sm:inline text-xs text-slate-500 font-medium border-r border-slate-200 pr-3 mr-1">
+            <span class="hidden md:inline text-xs text-slate-500 font-medium border-r border-slate-200 pr-3 mr-1">
                 حاضنة UCAS للابتكار المهني
             </span>
         </div>
 
         <!-- Right Section: Presentation Title & Fullscreen -->
-        <div class="flex items-center gap-3">
-            <div class="flex items-center gap-2">
-                <h1 class="text-lg md:text-xl font-extrabold text-slate-900 font-outfit tracking-tight">Hireland | مسار العمل الحر</h1>
-                <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+        <div class="flex items-center gap-2 sm:gap-3">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+                <h1 class="text-xs sm:text-base md:text-xl font-extrabold text-slate-900 font-outfit tracking-tight">Hireland | مسار العمل الحر</h1>
+                <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brand-600"></span>
             </div>
-            <button id="fullscreen-btn" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-all text-xs font-bold" title="ملء الشاشة">
+            <button id="fullscreen-btn"
+                class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 transition-all text-xs font-bold"
+                title="ملء الشاشة">
                 ⛶
             </button>
         </div>
@@ -73,25 +83,28 @@
 
     <!-- Linear Slide Progress Bar (5 Slides = 20% step) -->
     <div class="relative z-30 h-1 w-full bg-slate-200">
-        <div id="deck-progress-bar" class="h-full bg-brand-600 transition-all duration-500 ease-out" style="width: 20%;"></div>
+        <div id="deck-progress-bar" class="h-full bg-brand-600 transition-all duration-500 ease-out"
+            style="width: 20%;"></div>
     </div>
 
     <!-- Presentation Main Viewport (Zero-Scroll Strictly Enforced) -->
     <main class="relative z-10 w-full h-[calc(100vh-4rem-0.25rem-4rem)] overflow-hidden">
-        
+
         <!-- ========================================== -->
         <!-- SLIDE 1: Merged Intro, Branding & Platforms Links -->
         <!-- ========================================== -->
         <section class="slide-section active" id="slide-1" data-slide-index="0">
-            <div class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-2.5 flex flex-col justify-center overflow-hidden">
+            <div
+                class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-2.5 flex flex-col justify-center overflow-hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch h-full overflow-hidden">
-                    
+
                     <!-- RIGHT CARD: Text (5 Cols) -->
                     <div class="lg:col-span-5 deck-card">
                         <div class="space-y-3">
                             <!-- Slide Badge -->
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
+                                <span
+                                    class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
                                     شريحة 01
                                 </span>
                                 <span class="text-xs text-slate-400 font-outfit font-medium">الانطلاقة الفردية</span>
@@ -105,15 +118,18 @@
                             <!-- Concise Bullet Points -->
                             <div class="space-y-2.5 pt-1">
                                 <div class="pitch-point">
-                                    <strong>الهوية الرقمية:</strong> بناء براند شخصي موحد وتواجد احترافي عبر منصات العمل الحر.
+                                    <strong>الهوية الرقمية:</strong> بناء براند شخصي موحد وتواجد احترافي عبر منصات العمل
+                                    الحر.
                                 </div>
 
                                 <div class="pitch-point">
-                                    <strong>الملف المهني المعتمد:</strong> تجهيز سيرة ذاتية (ATS) وبورتفوليو رقمي تفاعلي للمشاريع.
+                                    <strong>الملف المهني المعتمد:</strong> تجهيز سيرة ذاتية (ATS) وبورتفوليو رقمي تفاعلي
+                                    للمشاريع.
                                 </div>
 
                                 <div class="pitch-point">
-                                    <strong>الاحتكاك بسوق العمل:</strong> تقديم عروض احترافية والتفاعل المباشر مع متطلبات العملاء.
+                                    <strong>الاحتكاك بسوق العمل:</strong> تقديم عروض احترافية والتفاعل المباشر مع
+                                    متطلبات العملاء.
                                 </div>
                             </div>
                         </div>
@@ -129,85 +145,120 @@
                     <!-- LEFT CARD: Platform Links with User-Provided Logos Stacked (7 Cols) -->
                     <div class="lg:col-span-7 deck-card">
                         <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-1">
-                            <span class="text-xs sm:text-sm font-bold text-slate-800">المنصات وحسابات العمل الحر المعتمدة:</span>
-                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200">100% جاهزية</span>
+                            <span class="text-xs sm:text-sm font-bold text-slate-800">المنصات وحسابات العمل الحر
+                                المعتمدة:</span>
+                            <span
+                                class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200">100%
+                                جاهزية</span>
                         </div>
 
                         <!-- All Platforms Stacked Vertically in User Order -->
                         <div class="space-y-2 my-auto">
                             <!-- 1. LinkedIn -->
-                            <a href="https://www.linkedin.com/in/a7med-radwan/" target="_blank" class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
+                            <a href="https://www.linkedin.com/in/a7med-radwan/" target="_blank"
+                                class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
-                                        <img src="image/لوجو لينكدان.png" alt="LinkedIn Logo" class="w-full h-full object-contain">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
+                                        <img src="image/لوجو لينكدان.png" alt="LinkedIn Logo"
+                                            class="w-full h-full object-contain">
                                     </div>
-                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">LinkedIn (لينكدإن)</h4>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">
+                                        LinkedIn (لينكدإن)</h4>
                                 </div>
-                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب ↗</span>
+                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب
+                                    ↗</span>
                             </a>
 
                             <!-- 2. Mostaql -->
-                            <a href="https://mostaql.com/u/a7medradwan" target="_blank" class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
+                            <a href="https://mostaql.com/u/a7medradwan" target="_blank"
+                                class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
-                                        <img src="image/لوجو مستقل.jpg" alt="Mostaql Logo" class="w-full h-full object-contain">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
+                                        <img src="image/لوجو مستقل.jpg" alt="Mostaql Logo"
+                                            class="w-full h-full object-contain">
                                     </div>
-                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">منصة مستقل (Mostaql)</h4>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">
+                                        منصة مستقل (Mostaql)</h4>
                                 </div>
-                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب ↗</span>
+                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب
+                                    ↗</span>
                             </a>
 
                             <!-- 3. Khamsat -->
-                            <a href="https://khamsat.com/user/ahmedradwan25" target="_blank" class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
+                            <a href="https://khamsat.com/user/ahmedradwan25" target="_blank"
+                                class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
-                                        <img src="image/لوجو خمسات.png" alt="Khamsat Logo" class="w-full h-full object-contain">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
+                                        <img src="image/لوجو خمسات.png" alt="Khamsat Logo"
+                                            class="w-full h-full object-contain">
                                     </div>
-                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">منصة خمسات (Khamsat)</h4>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">
+                                        منصة خمسات (Khamsat)</h4>
                                 </div>
-                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب ↗</span>
+                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب
+                                    ↗</span>
                             </a>
 
                             <!-- 4. Upwork -->
-                            <a href="https://www.upwork.com/freelancers/~012100eb54abef9891" target="_blank" class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
+                            <a href="https://www.upwork.com/freelancers/~012100eb54abef9891" target="_blank"
+                                class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
-                                        <img src="image/لوجو اببوركimages.png" alt="Upwork Logo" class="w-full h-full object-contain">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
+                                        <img src="image/لوجو اببوركimages.png" alt="Upwork Logo"
+                                            class="w-full h-full object-contain">
                                     </div>
-                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">منصة أبورك (Upwork Global)</h4>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">
+                                        منصة أبورك (Upwork Global)</h4>
                                 </div>
-                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب ↗</span>
+                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب
+                                    ↗</span>
                             </a>
 
                             <!-- 5. Baaeed -->
-                            <a href="https://baaeed.com/u/ahmed_radwan_4" target="_blank" class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
+                            <a href="https://baaeed.com/u/ahmed_radwan_4" target="_blank"
+                                class="flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
-                                        <img src="image/لوجو بعيد.jpg" alt="Baaeed Logo" class="w-full h-full object-contain">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-white border border-slate-200 p-1 flex items-center justify-center shrink-0">
+                                        <img src="image/لوجو بعيد.jpg" alt="Baaeed Logo"
+                                            class="w-full h-full object-contain">
                                     </div>
-                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">منصة بعيد (Baaeed)</h4>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">
+                                        منصة بعيد (Baaeed)</h4>
                                 </div>
-                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب ↗</span>
+                                <span class="text-xs text-slate-400 group-hover:text-brand-600 font-bold">زيارة الحساب
+                                    ↗</span>
                             </a>
 
                             <!-- 6. Portfolio -->
-                            <a href="https://a7med-radwan.github.io/ahmed-radwan-portfolio/" target="_blank" class="flex items-center justify-between p-2 rounded-xl bg-violet-50/60 hover:bg-violet-100/70 border border-brand-200 hover:border-brand-300 transition-all group">
+                            <a href="https://a7med-radwan.github.io/ahmed-radwan-portfolio/" target="_blank"
+                                class="flex items-center justify-between p-2 rounded-xl bg-violet-50/60 hover:bg-violet-100/70 border border-brand-200 hover:border-brand-300 transition-all group">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center text-[10px] font-bold font-outfit shrink-0">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center text-[10px] font-bold font-outfit shrink-0">
                                         PORT
                                     </div>
-                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">معرض الأعمال الحي (Live Portfolio)</h4>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">
+                                        معرض الأعمال الحي (Live Portfolio)</h4>
                                 </div>
                                 <span class="text-xs text-brand-600 font-bold">زيارة المعرض ↗</span>
                             </a>
 
                             <!-- 7. CV -->
-                            <a href="https://drive.google.com/file/d/1fesxxBwMl9e436-7Xb6km79g6W-KzeSq/view?usp=sharing" target="_blank" class="w-full flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
+                            <a href="https://drive.google.com/file/d/1fesxxBwMl9e436-7Xb6km79g6W-KzeSq/view?usp=sharing"
+                                target="_blank"
+                                class="w-full flex items-center justify-between p-2 rounded-xl bg-slate-50 hover:bg-violet-50/60 border border-slate-200 hover:border-brand-300 transition-all group">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-slate-200 text-slate-700 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center text-[10px] font-bold font-outfit shrink-0 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-slate-200 text-slate-700 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center text-[10px] font-bold font-outfit shrink-0 transition-colors">
                                         CV
                                     </div>
-                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">السيرة الذاتية المهنية (ATS Resume)</h4>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-brand-600">
+                                        السيرة الذاتية المهنية (ATS Resume)</h4>
                                 </div>
                                 <span class="text-xs text-brand-600 font-bold">فتح السيرة الذاتية ↗</span>
                             </a>
@@ -222,15 +273,17 @@
         <!-- SLIDE 2: The Pivot – 4 Problems & Teamwork -->
         <!-- ========================================== -->
         <section class="slide-section" id="slide-2" data-slide-index="1">
-            <div class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-2.5 flex flex-col justify-center overflow-hidden">
+            <div
+                class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-2.5 flex flex-col justify-center overflow-hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch h-full overflow-hidden">
-                    
+
                     <!-- RIGHT CARD: Text (5 Cols) -->
                     <div class="lg:col-span-5 deck-card">
                         <div class="space-y-3">
                             <!-- Slide Badge -->
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
+                                <span
+                                    class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
                                     شريحة 02
                                 </span>
                                 <span class="text-xs text-slate-400 font-outfit font-medium">نقطة التحول</span>
@@ -244,15 +297,18 @@
                             <!-- Concise Talking Points -->
                             <div class="space-y-2.5 pt-1">
                                 <div class="pitch-point">
-                                    <strong>تحديات السوق الأربعة:</strong> التشتت بين المنصات، صعوبة الفرز، ضياع الفرص بالتأخر، وبطء إعداد العروض.
+                                    <strong>تحديات السوق الأربعة:</strong> التشتت بين المنصات، صعوبة الفرز، ضياع الفرص
+                                    بالتأخر، وبطء إعداد العروض.
                                 </div>
 
                                 <div class="pitch-point bg-violet-50/70 border-brand-200 text-brand-950">
-                                    <strong>ولادة فكرة Hireland:</strong> تحويل هذه المعاناة إلى فرصة ابتكار منصة ذكية تخدم المستقلين.
+                                    <strong>ولادة فكرة Hireland:</strong> تحويل هذه المعاناة إلى فرصة ابتكار منصة ذكية
+                                    تخدم المستقلين.
                                 </div>
 
                                 <div class="pitch-point bg-emerald-50/70 border-emerald-200 text-emerald-950">
-                                    <strong>العمل الجماعي (Teamwork):</strong> تشكيل فريق متكامل لتسويق الخدمات وتطوير المنتج سوياً.
+                                    <strong>العمل الجماعي (Teamwork):</strong> تشكيل فريق متكامل لتسويق الخدمات وتطوير
+                                    المنتج سوياً.
                                 </div>
                             </div>
                         </div>
@@ -279,15 +335,19 @@
                         </div>
 
                         <!-- Full Image Showcase Container -->
-                        <div class="image-showcase-container p-2 cursor-pointer group" onclick="openImageModal(currentProblemImage)">
-                            <img src="image/المشكلة الاولى.jpg" id="problem-preview-img" alt="Problem Visual" class="group-hover:scale-105">
-                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-white text-xs font-bold">
+                        <div class="image-showcase-container p-2 cursor-pointer group"
+                            onclick="openImageModal(currentProblemImage)">
+                            <img src="image/المشكلة الاولى.jpg" id="problem-preview-img" alt="Problem Visual"
+                                class="group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-white text-xs font-bold">
                                 تكبير الصورة ⛶
                             </div>
                         </div>
 
                         <!-- Simple Title Header -->
-                        <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+                        <div
+                            class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
                             <span id="problem-title" class="font-bold text-slate-900">1. مشكلة التشتت بين المنصات</span>
                             <span class="text-slate-400">سلسلة بوسترات Hireland الرسمية</span>
                         </div>
@@ -301,15 +361,17 @@
         <!-- SLIDE 3: Teamwork & Cross-Functional Synergy (⭐ MAIN FOCUS) -->
         <!-- ========================================== -->
         <section class="slide-section" id="slide-3" data-slide-index="2">
-            <div class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-2.5 flex flex-col justify-center overflow-hidden">
+            <div
+                class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-2.5 flex flex-col justify-center overflow-hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch h-full overflow-hidden">
-                    
+
                     <!-- RIGHT CARD: Text (5 Cols) -->
                     <div class="lg:col-span-5 deck-card">
                         <div class="space-y-2.5">
                             <!-- Slide Badge -->
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
+                                <span
+                                    class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
                                     شريحة 03 • محور التركيز
                                 </span>
                                 <span class="text-xs text-slate-400 font-outfit font-medium">Agile Synergy</span>
@@ -323,19 +385,23 @@
                             <!-- Concise Talking Points -->
                             <div class="space-y-2 pt-0.5">
                                 <div class="pitch-point">
-                                    <strong>الهوية والتسويق (حسام + عمر):</strong> الشعار، الهوية البصرية، وإطلاق الحسابات الرسمية (LinkedIn & Instagram).
+                                    <strong>الهوية والتسويق (حسام + عمر):</strong> الشعار، الهوية البصرية، وإطلاق
+                                    الحسابات الرسمية (LinkedIn & Instagram).
                                 </div>
 
                                 <div class="pitch-point">
-                                    <strong>تجربة المستخدم UI/UX (شهد + حسام + معاذ):</strong> رحلة المستخدم والشاشات التفاعلية على Figma.
+                                    <strong>تجربة المستخدم UI/UX (شهد + حسام + معاذ):</strong> رحلة المستخدم والشاشات
+                                    التفاعلية على Figma.
                                 </div>
 
                                 <div class="pitch-point">
-                                    <strong>الـ Backend والـ AI (أحمد + محمد):</strong> معمارية النظام ومحرك المطابقة الذكي.
+                                    <strong>الـ Backend والـ AI (أحمد + محمد):</strong> معمارية النظام ومحرك المطابقة
+                                    الذكي.
                                 </div>
 
                                 <div class="pitch-point">
-                                    <strong>الـ Frontend (إبراهيم + رائد + أريج):</strong> بناء الواجهات المتجاوبة والربط البرمجي.
+                                    <strong>الـ Frontend (إبراهيم + رائد + أريج):</strong> بناء الواجهات المتجاوبة
+                                    والربط البرمجي.
                                 </div>
                             </div>
                         </div>
@@ -343,18 +409,23 @@
                         <!-- Official Channels & Team Leader Box -->
                         <div class="space-y-2 mt-2">
                             <!-- Official Channels Highlight Card -->
-                            <div class="p-2.5 rounded-xl bg-gradient-to-r from-violet-50 via-white to-blue-50/40 border border-brand-200 flex flex-wrap items-center justify-between gap-2">
+                            <div
+                                class="p-2.5 rounded-xl bg-gradient-to-r from-violet-50 via-white to-blue-50/40 border border-brand-200 flex flex-wrap items-center justify-between gap-2">
                                 <div class="flex items-center gap-2">
                                     <span class="w-2 h-2 rounded-full bg-brand-600"></span>
                                     <span class="text-xs font-bold text-slate-900">قنوات المنصة الرسمية:</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <a href="https://www.linkedin.com/company/hireland-io" target="_blank" class="px-2.5 py-1 rounded-lg bg-white hover:bg-blue-600 text-slate-800 hover:text-white border border-slate-200 hover:border-blue-600 text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 group">
-                                        <img src="image/لوجو لينكدان.png" alt="LinkedIn" class="w-3.5 h-3.5 object-contain">
+                                    <a href="https://www.linkedin.com/company/hireland-io" target="_blank"
+                                        class="px-2.5 py-1 rounded-lg bg-white hover:bg-blue-600 text-slate-800 hover:text-white border border-slate-200 hover:border-blue-600 text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 group">
+                                        <img src="image/لوجو لينكدان.png" alt="LinkedIn"
+                                            class="w-3.5 h-3.5 object-contain">
                                         <span>LinkedIn Hireland</span>
                                     </a>
-                                    <a href="https://www.instagram.com/hireland.io" target="_blank" class="px-2.5 py-1 rounded-lg bg-white hover:bg-pink-600 text-slate-800 hover:text-white border border-slate-200 hover:border-pink-600 text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 group">
-                                        <img src="image/لوجو الانستا.jpg" alt="Instagram" class="w-3.5 h-3.5 object-contain rounded-sm">
+                                    <a href="https://www.instagram.com/hireland.io" target="_blank"
+                                        class="px-2.5 py-1 rounded-lg bg-white hover:bg-pink-600 text-slate-800 hover:text-white border border-slate-200 hover:border-pink-600 text-xs font-bold transition-all shadow-sm flex items-center gap-1.5 group">
+                                        <img src="image/لوجو الانستا.jpg" alt="Instagram"
+                                            class="w-3.5 h-3.5 object-contain rounded-sm">
                                         <span>@hireland.io</span>
                                     </a>
                                 </div>
@@ -376,25 +447,36 @@
                         <!-- Top Tabs -->
                         <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-1.5">
                             <div class="flex flex-wrap gap-1">
-                                <button class="tab-pill-btn active" onclick="switchTeamTrack(0, this)">1. الهوية والشعار</button>
-                                <button class="tab-pill-btn" onclick="switchTeamTrack(1, this)">2. شاشة Intro (UI/UX)</button>
-                                <button class="tab-pill-btn" onclick="switchTeamTrack(2, this)">3. شاشة Sign up (Frontend)</button>
-                                <button class="tab-pill-btn" onclick="switchTeamTrack(3, this)">4. واجهة الموبايل</button>
+                                <button class="tab-pill-btn active" onclick="switchTeamTrack(0, this)">1. الهوية
+                                    والشعار</button>
+                                <button class="tab-pill-btn" onclick="switchTeamTrack(1, this)">2. شاشة Intro
+                                    (UI/UX)</button>
+                                <button class="tab-pill-btn" onclick="switchTeamTrack(2, this)">3. شاشة Sign up
+                                    (Frontend)</button>
+                                <button class="tab-pill-btn" onclick="switchTeamTrack(3, this)">4. واجهة
+                                    الموبايل</button>
                             </div>
                         </div>
 
                         <!-- Full Image Showcase Container -->
-                        <div class="image-showcase-container p-2 cursor-pointer group" onclick="openImageModal(currentTrackImage)">
-                            <img src="image/logo.png" id="track-media-img" alt="Track Visual" class="group-hover:scale-105">
-                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-white text-xs font-bold">
+                        <div class="image-showcase-container p-2 cursor-pointer group"
+                            onclick="openImageModal(currentTrackImage)">
+                            <img src="image/logo.png" id="track-media-img" alt="Track Visual"
+                                class="group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-white text-xs font-bold">
                                 تكبير الصورة ⛶
                             </div>
                         </div>
 
                         <!-- Track Title & Badge -->
-                        <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
-                            <span id="track-title" class="font-bold text-slate-900">الهوية البصرية وشعار Hireland الرسمي</span>
-                            <span id="track-badge" class="px-2.5 py-0.5 rounded text-xs font-bold bg-pink-100 text-pink-700">مسار الهوية والتسويق</span>
+                        <div
+                            class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+                            <span id="track-title" class="font-bold text-slate-900">الهوية البصرية وشعار Hireland
+                                الرسمي</span>
+                            <span id="track-badge"
+                                class="px-2.5 py-0.5 rounded text-xs font-bold bg-pink-100 text-pink-700">مسار الهوية
+                                والتسويق</span>
                         </div>
                     </div>
 
@@ -406,15 +488,17 @@
         <!-- SLIDE 4: Core Solution & Smart Engine      -->
         <!-- ========================================== -->
         <section class="slide-section" id="slide-4" data-slide-index="3">
-            <div class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-2.5 flex flex-col justify-center overflow-hidden">
+            <div
+                class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-2.5 flex flex-col justify-center overflow-hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch h-full overflow-hidden">
-                    
+
                     <!-- RIGHT CARD: Text (5 Cols) -->
                     <div class="lg:col-span-5 deck-card">
                         <div class="space-y-2.5">
                             <!-- Slide Badge -->
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
+                                <span
+                                    class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
                                     شريحة 04
                                 </span>
                                 <span class="text-xs text-slate-400 font-outfit font-medium">الحل والابتكار</span>
@@ -428,15 +512,18 @@
                             <!-- Concise Talking Points -->
                             <div class="space-y-2 pt-0.5">
                                 <div class="pitch-point">
-                                    <strong>01. استقطاب الوظائف:</strong> سحب وتوحيد بيانات الوظائف آلياً من مختلف المنصات.
+                                    <strong>01. استقطاب الوظائف:</strong> سحب وتوحيد بيانات الوظائف آلياً من مختلف
+                                    المنصات.
                                 </div>
 
                                 <div class="pitch-point">
-                                    <strong>02. الفرز الذكي للـ CV:</strong> استخراج مهارات وخبرات المستقل بدقة بالذكاء الاصطناعي.
+                                    <strong>02. الفرز الذكي للـ CV:</strong> استخراج مهارات وخبرات المستقل بدقة بالذكاء
+                                    الاصطناعي.
                                 </div>
 
                                 <div class="pitch-point">
-                                    <strong>03. المطابقة الفورية (Match Score):</strong> احتساب نسبة التطابق وإشعار المستقل للتقديم مبكراً.
+                                    <strong>03. المطابقة الفورية (Match Score):</strong> احتساب نسبة التطابق وإشعار
+                                    المستقل للتقديم مبكراً.
                                 </div>
                             </div>
                         </div>
@@ -454,24 +541,34 @@
                         <!-- Top Tabs -->
                         <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-1.5">
                             <div class="flex flex-wrap items-center gap-1.5">
-                                <button class="tab-pill-btn active" onclick="switchSlide5Image('intro', this)">1. شاشة البداية Intro</button>
-                                <button class="tab-pill-btn" onclick="switchSlide5Image('signup', this)">2. شاشة التسجيل Sign Up</button>
-                                <button class="tab-pill-btn" onclick="switchSlide5Image('cv', this)">3. رفع وبناء الـ CV</button>
+                                <button class="tab-pill-btn active" onclick="switchSlide5Image('intro', this)">1. شاشة
+                                    البداية Intro</button>
+                                <button class="tab-pill-btn" onclick="switchSlide5Image('signup', this)">2. شاشة التسجيل
+                                    Sign Up</button>
+                                <button class="tab-pill-btn" onclick="switchSlide5Image('cv', this)">3. رفع وبناء الـ
+                                    CV</button>
                             </div>
-                            <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded border border-brand-200">واجهات النظام الحية</span>
+                            <span
+                                class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded border border-brand-200">واجهات
+                                النظام الحية</span>
                         </div>
 
                         <!-- Full Image Showcase Container -->
-                        <div class="image-showcase-container p-2 cursor-pointer group" onclick="openImageModal(currentSlide5Image)">
-                            <img src="image/Intro.png" id="slide5-preview-img" alt="Hireland UI" class="group-hover:scale-105">
-                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-white text-xs font-bold">
+                        <div class="image-showcase-container p-2 cursor-pointer group"
+                            onclick="openImageModal(currentSlide5Image)">
+                            <img src="image/Intro.png" id="slide5-preview-img" alt="Hireland UI"
+                                class="group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-white text-xs font-bold">
                                 تكبير واجهة الموقع ⛶
                             </div>
                         </div>
 
                         <!-- Title Header -->
-                        <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
-                            <span id="slide5-image-title" class="font-bold text-slate-900">واجهة الموقع الرسمية - شاشة البداية (Intro)</span>
+                        <div
+                            class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+                            <span id="slide5-image-title" class="font-bold text-slate-900">واجهة الموقع الرسمية - شاشة
+                                البداية (Intro)</span>
                             <span class="text-brand-600 font-bold font-outfit">Hireland.io</span>
                         </div>
                     </div>
@@ -481,88 +578,150 @@
         </section>
 
         <!-- ========================================== -->
-        <!-- SLIDE 5: Future Roadmap & Discussion (Q&A) -->
+        <!-- SLIDE 5: Closing & Q&A Discussion Hub     -->
         <!-- ========================================== -->
         <section class="slide-section" id="slide-5" data-slide-index="4">
-            <div class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-2.5 flex flex-col justify-center overflow-hidden">
+            <div
+                class="max-w-[1440px] w-full mx-auto h-full px-4 lg:px-8 py-3 flex flex-col justify-center overflow-hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch h-full overflow-hidden">
-                    
-                    <!-- RIGHT CARD: Text (5 Cols) -->
-                    <div class="lg:col-span-5 deck-card">
-                        <div class="space-y-2.5">
-                            <!-- Slide Badge -->
+
+                    <!-- RIGHT CARD: Thank You & Q&A (6 Cols) -->
+                    <div class="lg:col-span-6 deck-card flex flex-col justify-between p-6 lg:p-8">
+                        <div class="space-y-4">
+                            <!-- Badge -->
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
-                                    شريحة 05
+                                <span
+                                    class="text-xs font-bold text-brand-700 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">
+                                    شريحة 05 • الخاتمة
                                 </span>
-                                <span class="text-xs text-slate-400 font-outfit font-medium">الخاتمة والنقاش</span>
+                                <span class="text-xs text-slate-400 font-outfit font-medium">Discussion & Q&A</span>
                             </div>
 
-                            <!-- Main Heading -->
-                            <h2 class="text-2xl font-black text-slate-900 leading-tight">
-                                خارطة الطريق وجلسة النقاش
-                            </h2>
+                            <!-- Hero Title -->
+                            <div>
+                                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 leading-tight">
+                                    شكراً لحسن استماعكم
+                                </h2>
+                                <p class="text-sm text-slate-500 mt-2 font-medium">
+                                    مشروع Hireland • نحو تجربة عمل حر ذكية ومتكاملة
+                                </p>
+                            </div>
 
-                            <!-- Concise Talking Points -->
-                            <div class="space-y-2 pt-0.5">
-                                <div class="pitch-point">
-                                    <strong>المرحلة الأولى (Q2):</strong> إطلاق النموذج الأولي (MVP) والربط مع أبرز المنصات.
+                            <!-- Big Q&A Box -->
+                            <div
+                                class="p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-violet-50 via-white to-purple-50/50 border border-brand-200 text-center space-y-3 shadow-sm">
+                                <div
+                                    class="w-12 h-12 mx-auto rounded-full bg-brand-600 text-white flex items-center justify-center text-xl font-bold font-outfit shadow-md shadow-brand-500/20">
+                                    ?
                                 </div>
-
-                                <div class="pitch-point">
-                                    <strong>المرحلة الثانية (Q3):</strong> تفعيل محرك الذكاء الاصطناعي ومساعد كتابة العروض (AI Proposals).
-                                </div>
-
-                                <div class="pitch-point">
-                                    <strong>المرحلة الثالثة (Q4):</strong> برنامج تجريبي (Beta) لمستقلي وخريجي حاضنة UCAS.
-                                </div>
-
-                                <div class="pitch-point bg-violet-50/80 border-brand-200 text-brand-950 font-bold">
-                                    <strong>جلسة النقاش (Q&A):</strong> نرحب بأسئلة وملاحظات لجنة التحكيم الكريمة.
-                                </div>
+                                <h3 class="text-lg lg:text-xl font-black text-slate-900">
+                                    جلسة النقاش والأسئلة مفتوحة
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                                    نرحب بجميع أسئلتكم وملاحظاتكم وتوجيهاتكم الكريمة
+                                </p>
                             </div>
                         </div>
 
-                        <!-- Presenter Card Box -->
-                        <div class="deck-card-subtle mt-2">
-                            <div class="text-xs font-bold text-brand-600 mb-0.5">مقدم المشروع:</div>
-                            <h4 class="text-sm font-extrabold text-slate-900">أحمد هيثم رضوان</h4>
-                            <p class="text-xs text-slate-600">ضمن مسار احتضان مشروع elancer • حاضنة UCAS</p>
+                        <!-- Acknowledgement footer -->
+                        <div
+                            class="pt-3 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500 font-medium">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span>خالص الشكر لحاضنة UCAS للابتكار المهني وكافة الموجهين والمدربين.</span>
                         </div>
                     </div>
 
-                    <!-- LEFT CARD: Mobile Mockup & Clean Roadmap (7 Cols) -->
-                    <div class="lg:col-span-7 deck-card">
-                        <!-- Top Header -->
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-1.5">
-                            <span class="text-xs sm:text-sm font-bold text-slate-800">معاينة الهوية وتطبيق الموبايل:</span>
-                            <span class="text-xs font-bold text-brand-600 font-outfit">2026 Roadmap</span>
-                        </div>
+                    <!-- LEFT CARD: Presenter & Direct Official Links (6 Cols) -->
+                    <div class="lg:col-span-6 deck-card flex flex-col justify-between p-6 lg:p-8">
+                        <div class="space-y-4">
+                            <!-- Top Presenter Highlight -->
+                            <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-brand-600 text-white flex items-center justify-center font-black text-xl shadow-md shadow-brand-500/20 shrink-0">
+                                    أ
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-brand-600 mb-0.5">مقدم المشروع:</div>
+                                    <h3 class="text-lg font-black text-slate-900">أحمد هيثم رضوان</h3>
+                                    <p class="text-xs text-slate-600 font-medium">Software Engineer • مسار العمل الحر
+                                        (حاضنة UCAS)</p>
+                                </div>
+                            </div>
 
-                        <!-- Full Image Showcase Container (Mobile Mockup) -->
-                        <div class="image-showcase-container p-2 cursor-pointer group" onclick="openImageModal('image/A photo of a logo on an iPhone.png')">
-                            <img src="image/A photo of a logo on an iPhone.png" alt="Hireland Mobile App" class="group-hover:scale-105">
-                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-white text-xs font-bold">
-                                تكبير المعاينة ⛶
+                            <!-- Direct Clean Action Links Grid -->
+                            <div class="space-y-2.5">
+                                <div class="text-xs font-bold text-slate-400">الروابط والقنوات الرسمية المباشرة:</div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                    <!-- LinkedIn Hireland -->
+                                    <a href="https://www.linkedin.com/company/hireland-io" target="_blank"
+                                        class="flex items-center justify-between p-3 rounded-xl bg-white hover:bg-blue-50/70 border border-slate-200 hover:border-blue-300 transition-all group shadow-sm">
+                                        <div class="flex items-center gap-2.5">
+                                            <div
+                                                class="w-7 h-7 rounded-lg bg-slate-50 p-1 flex items-center justify-center shrink-0 border border-slate-100">
+                                                <img src="image/لوجو لينكدان.png" alt="LinkedIn"
+                                                    class="w-full h-full object-contain">
+                                            </div>
+                                            <span
+                                                class="text-xs font-bold text-slate-800 group-hover:text-blue-700">LinkedIn
+                                                Hireland</span>
+                                        </div>
+                                        <span class="text-xs text-slate-400 group-hover:text-blue-700 font-bold">↗</span>
+                                    </a>
+
+                                    <!-- Instagram Hireland -->
+                                    <a href="https://www.instagram.com/hireland.io" target="_blank"
+                                        class="flex items-center justify-between p-3 rounded-xl bg-white hover:bg-pink-50/70 border border-slate-200 hover:border-pink-300 transition-all group shadow-sm">
+                                        <div class="flex items-center gap-2.5">
+                                            <div
+                                                class="w-7 h-7 rounded-lg bg-slate-50 p-1 flex items-center justify-center shrink-0 border border-slate-100">
+                                                <img src="image/لوجو الانستا.jpg" alt="Instagram"
+                                                    class="w-full h-full object-contain rounded-sm">
+                                            </div>
+                                            <span
+                                                class="text-xs font-bold text-slate-800 group-hover:text-pink-700">@hireland.io</span>
+                                        </div>
+                                        <span class="text-xs text-slate-400 group-hover:text-pink-700 font-bold">↗</span>
+                                    </a>
+
+                                    <!-- CV -->
+                                    <a href="https://drive.google.com/file/d/1fesxxBwMl9e436-7Xb6km79g6W-KzeSq/view?usp=sharing"
+                                        target="_blank"
+                                        class="flex items-center justify-between p-3 rounded-xl bg-white hover:bg-violet-50/70 border border-slate-200 hover:border-brand-300 transition-all group shadow-sm">
+                                        <div class="flex items-center gap-2.5">
+                                            <div
+                                                class="w-7 h-7 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-[10px] shrink-0 font-outfit border border-brand-200">
+                                                CV
+                                            </div>
+                                            <span
+                                                class="text-xs font-bold text-slate-800 group-hover:text-brand-700">السيرة
+                                                الذاتية (CV)</span>
+                                        </div>
+                                        <span class="text-xs text-brand-600 font-bold">↗</span>
+                                    </a>
+
+                                    <!-- Portfolio -->
+                                    <a href="https://a7med-radwan.github.io/ahmed-radwan-portfolio/" target="_blank"
+                                        class="flex items-center justify-between p-3 rounded-xl bg-white hover:bg-violet-50/70 border border-slate-200 hover:border-brand-300 transition-all group shadow-sm">
+                                        <div class="flex items-center gap-2.5">
+                                            <div
+                                                class="w-7 h-7 rounded-lg bg-brand-600 text-white flex items-center justify-center font-bold text-[10px] shrink-0 font-outfit">
+                                                PORT
+                                            </div>
+                                            <span
+                                                class="text-xs font-bold text-slate-800 group-hover:text-brand-700">معرض
+                                                الأعمال</span>
+                                        </div>
+                                        <span class="text-xs text-brand-600 font-bold">↗</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Prominent Official Channels & Contact -->
-                        <div class="pt-2 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2">
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-slate-800">قنوات المنصة الرسمية:</span>
-                                <a href="https://www.linkedin.com/company/hireland-io" target="_blank" class="px-3 py-1 rounded-lg bg-blue-50 hover:bg-blue-600 text-blue-800 hover:text-white border border-blue-200 hover:border-blue-600 text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm group">
-                                    <img src="image/لوجو لينكدان.png" alt="LinkedIn" class="w-3.5 h-3.5 object-contain">
-                                    <span>LinkedIn Hireland</span> ↗
-                                </a>
-                                <a href="https://www.instagram.com/hireland.io" target="_blank" class="px-3 py-1 rounded-lg bg-pink-50 hover:bg-pink-600 text-pink-800 hover:text-white border border-pink-200 hover:border-pink-600 text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm group">
-                                    <img src="image/لوجو الانستا.jpg" alt="Instagram" class="w-3.5 h-3.5 object-contain rounded-sm">
-                                    <span>@hireland.io</span> ↗
-                                </a>
-                            </div>
-                            <a href="https://a7med-radwan.github.io/ahmed-radwan-portfolio/" target="_blank" class="text-xs font-bold text-brand-600 hover:underline">
-                                معرض الأعمال (Portfolio) ↗
-                            </a>
+                        <!-- Bottom Branding -->
+                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                            <span class="font-bold text-slate-700">منصة Hireland الذكية</span>
+                            <span class="font-extrabold text-brand-600 font-outfit">hireland.io</span>
                         </div>
                     </div>
 
@@ -573,23 +732,26 @@
     </main>
 
     <!-- Bottom Presentation Control Dock (5 Slides: 01 / 05) -->
-    <footer class="fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-slate-200 z-30 px-6 md:px-10 flex items-center justify-between shadow-sm">
-        
+    <footer
+        class="fixed bottom-0 left-0 right-0 h-14 sm:h-16 bg-white border-t border-slate-200 z-30 px-3 sm:px-6 md:px-10 flex items-center justify-between shadow-sm">
+
         <!-- Left: Keyboard Hint -->
-        <div class="flex items-center gap-2 text-xs text-slate-500">
+        <div class="hidden md:flex items-center gap-2 text-xs text-slate-500">
             <span>استخدم الأسهم</span>
-            <kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-300 font-mono text-[11px] text-slate-700">←</kbd>
-            <kbd class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-300 font-mono text-[11px] text-slate-700">→</kbd>
-            <span class="hidden sm:inline">في لوحة المفاتيح للتنقل</span>
+            <kbd
+                class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-300 font-mono text-[11px] text-slate-700">←</kbd>
+            <kbd
+                class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-300 font-mono text-[11px] text-slate-700">→</kbd>
+            <span class="hidden lg:inline">في لوحة المفاتيح للتنقل</span>
         </div>
 
         <!-- Center: Slide Counter & Pagination Dots -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2.5 sm:gap-4">
             <span class="text-xs font-bold text-slate-600 font-outfit" id="slide-counter-badge">
                 <span id="current-slide-num" class="text-slate-900 font-extrabold text-sm">01</span> / 05
             </span>
 
-            <div class="flex items-center gap-1.5" id="pagination-dots">
+            <div class="flex items-center gap-1 sm:gap-1.5" id="pagination-dots">
                 <button class="dot-indicator active" onclick="goToSlide(0)" title="1. التواجد الرقمي"></button>
                 <button class="dot-indicator" onclick="goToSlide(1)" title="2. نقطة التحول"></button>
                 <button class="dot-indicator" onclick="goToSlide(2)" title="3. هندسة الفريق"></button>
@@ -599,12 +761,14 @@
         </div>
 
         <!-- Right: Navigation Buttons -->
-        <div class="flex items-center gap-2">
-            <button id="next-slide-btn" onclick="nextSlide()" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm">
+        <div class="flex items-center gap-1.5 sm:gap-2">
+            <button id="next-slide-btn" onclick="nextSlide()"
+                class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold flex items-center gap-1 sm:gap-1.5 transition-all shadow-sm">
                 <span>التالي</span>
                 <span>←</span>
             </button>
-            <button id="prev-slide-btn" onclick="prevSlide()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition-all">
+            <button id="prev-slide-btn" onclick="prevSlide()"
+                class="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1 sm:gap-1.5 transition-all">
                 <span>→</span>
                 <span>السابق</span>
             </button>
@@ -616,11 +780,15 @@
     <!-- ======================================================== -->
 
     <!-- Modal 1: Ahmed Radwan Interactive CV Modal -->
-    <div id="cv-modal" class="modal-overlay hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeModal('cv-modal')">
-        <div class="deck-card bg-white w-full max-w-2xl p-6 space-y-4 max-h-[85vh] overflow-y-auto relative animate-scaleUp shadow-2xl" onclick="event.stopPropagation()">
+    <div id="cv-modal"
+        class="modal-overlay hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+        onclick="closeModal('cv-modal')">
+        <div class="deck-card bg-white w-full max-w-2xl p-6 space-y-4 max-h-[85vh] overflow-y-auto relative animate-scaleUp shadow-2xl"
+            onclick="event.stopPropagation()">
             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-violet-100 text-brand-600 flex items-center justify-center font-bold text-base">
+                    <div
+                        class="w-10 h-10 rounded-full bg-violet-100 text-brand-600 flex items-center justify-center font-bold text-base">
                         أ
                     </div>
                     <div>
@@ -628,7 +796,8 @@
                         <p class="text-xs text-slate-500 font-outfit">Software Engineer • Backend & AI Integration</p>
                     </div>
                 </div>
-                <button onclick="closeModal('cv-modal')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors font-bold">
+                <button onclick="closeModal('cv-modal')"
+                    class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors font-bold">
                     ✕
                 </button>
             </div>
@@ -637,11 +806,21 @@
                 <div>
                     <h4 class="text-brand-600 font-bold mb-1.5">المهارات التقنية (Technical Stack):</h4>
                     <div class="flex flex-wrap gap-1.5">
-                        <span class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">PHP & Laravel</span>
-                        <span class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">OpenAI API & LLMs</span>
-                        <span class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">RESTful & GraphQL APIs</span>
-                        <span class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">MySQL & Database Design</span>
-                        <span class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">Docker & Git</span>
+                        <span
+                            class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">PHP
+                            & Laravel</span>
+                        <span
+                            class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">OpenAI
+                            API & LLMs</span>
+                        <span
+                            class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">RESTful
+                            & GraphQL APIs</span>
+                        <span
+                            class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">MySQL
+                            & Database Design</span>
+                        <span
+                            class="bg-slate-100 border border-slate-200 px-2 py-1 rounded text-slate-800 font-outfit font-medium">Docker
+                            & Git</span>
                     </div>
                 </div>
 
@@ -663,10 +842,13 @@
             </div>
 
             <div class="pt-3 border-t border-slate-200 flex justify-end gap-2">
-                <a href="https://drive.google.com/file/d/1fesxxBwMl9e436-7Xb6km79g6W-KzeSq/view?usp=sharing" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-brand-600 text-white text-xs font-semibold flex items-center gap-1.5 hover:bg-brand-700 transition-colors">
+                <a href="https://drive.google.com/file/d/1fesxxBwMl9e436-7Xb6km79g6W-KzeSq/view?usp=sharing"
+                    target="_blank"
+                    class="px-3.5 py-1.5 rounded-lg bg-brand-600 text-white text-xs font-semibold flex items-center gap-1.5 hover:bg-brand-700 transition-colors">
                     <span>فتح الـ CV على Google Drive ↗</span>
                 </a>
-                <a href="https://a7med-radwan.github.io/ahmed-radwan-portfolio/" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-xs font-semibold flex items-center gap-1.5 hover:bg-slate-200 transition-colors">
+                <a href="https://a7med-radwan.github.io/ahmed-radwan-portfolio/" target="_blank"
+                    class="px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-800 text-xs font-semibold flex items-center gap-1.5 hover:bg-slate-200 transition-colors">
                     <span>معرض الأعمال ↗</span>
                 </a>
             </div>
@@ -674,18 +856,23 @@
     </div>
 
     <!-- Modal 2: Quick Links & Live Project Modal -->
-    <div id="links-modal" class="modal-overlay hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeModal('links-modal')">
-        <div class="deck-card bg-white w-full max-w-lg p-6 space-y-4 relative animate-scaleUp shadow-2xl" onclick="event.stopPropagation()">
+    <div id="links-modal"
+        class="modal-overlay hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+        onclick="closeModal('links-modal')">
+        <div class="deck-card bg-white w-full max-w-lg p-6 space-y-4 relative animate-scaleUp shadow-2xl"
+            onclick="event.stopPropagation()">
             <div class="flex items-center justify-between border-b border-slate-200 pb-3">
                 <h3 class="text-slate-900 text-base font-bold">دليل الروابط الرسمية والمشاريع الحية</h3>
-                <button onclick="closeModal('links-modal')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors font-bold">
+                <button onclick="closeModal('links-modal')"
+                    class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors font-bold">
                     ✕
                 </button>
             </div>
 
             <div class="space-y-2 text-xs">
                 <div class="text-[11px] font-bold text-slate-400 mb-1">قنوات وتواجد منصة Hireland:</div>
-                <a href="https://www.linkedin.com/company/hireland-io" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-blue-50/70 hover:bg-blue-100 border border-blue-200 text-slate-900 font-bold transition-all">
+                <a href="https://www.linkedin.com/company/hireland-io" target="_blank"
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-blue-50/70 hover:bg-blue-100 border border-blue-200 text-slate-900 font-bold transition-all">
                     <div class="flex items-center gap-2">
                         <img src="image/لوجو لينكدان.png" alt="LinkedIn" class="w-4 h-4 object-contain">
                         <span>صفحة شركة Hireland الرسمية على LinkedIn</span>
@@ -693,7 +880,8 @@
                     <span class="text-blue-600">↗</span>
                 </a>
 
-                <a href="https://www.instagram.com/hireland.io" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-pink-50/70 hover:bg-pink-100 border border-pink-200 text-slate-900 font-bold transition-all">
+                <a href="https://www.instagram.com/hireland.io" target="_blank"
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-pink-50/70 hover:bg-pink-100 border border-pink-200 text-slate-900 font-bold transition-all">
                     <div class="flex items-center gap-2">
                         <img src="image/لوجو الانستا.jpg" alt="Instagram" class="w-4 h-4 object-contain rounded-sm">
                         <span>صفحة مشروع Hireland على Instagram (@hireland.io)</span>
@@ -702,12 +890,15 @@
                 </a>
 
                 <div class="text-[11px] font-bold text-slate-400 mt-2 mb-1">حسابات مقدم المشروع:</div>
-                <a href="https://drive.google.com/file/d/1fesxxBwMl9e436-7Xb6km79g6W-KzeSq/view?usp=sharing" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-violet-50/70 hover:bg-violet-100 border border-brand-200 text-slate-900 font-bold transition-all">
+                <a href="https://drive.google.com/file/d/1fesxxBwMl9e436-7Xb6km79g6W-KzeSq/view?usp=sharing"
+                    target="_blank"
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-violet-50/70 hover:bg-violet-100 border border-brand-200 text-slate-900 font-bold transition-all">
                     <span>السيرة الذاتية المهنية لأحمد رضوان (Google Drive CV)</span>
                     <span class="text-brand-600">↗</span>
                 </a>
 
-                <a href="https://a7med-radwan.github.io/ahmed-radwan-portfolio/" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 hover:bg-violet-50 border border-slate-200 text-slate-900 font-bold transition-all">
+                <a href="https://a7med-radwan.github.io/ahmed-radwan-portfolio/" target="_blank"
+                    class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 hover:bg-violet-50 border border-slate-200 text-slate-900 font-bold transition-all">
                     <span>معرض أعمال أحمد رضوان الحي (Live Portfolio)</span>
                     <span class="text-slate-400">↗</span>
                 </a>
@@ -716,12 +907,16 @@
     </div>
 
     <!-- Modal 4: High-Res Image Showcase Modal -->
-    <div id="image-modal" class="modal-overlay hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeModal('image-modal')">
+    <div id="image-modal"
+        class="modal-overlay hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
+        onclick="closeModal('image-modal')">
         <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
-            <button onclick="closeModal('image-modal')" class="absolute -top-10 left-0 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center text-sm transition-colors font-bold">
+            <button onclick="closeModal('image-modal')"
+                class="absolute -top-10 left-0 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center text-sm transition-colors font-bold">
                 ✕
             </button>
-            <img src="" id="image-modal-src" alt="Showcase Preview" class="max-w-full max-h-[80vh] rounded-xl shadow-2xl border border-white/20 object-contain bg-white">
+            <img src="" id="image-modal-src" alt="Showcase Preview"
+                class="max-w-full max-h-[80vh] rounded-xl shadow-2xl border border-white/20 object-contain bg-white">
             <p id="image-modal-caption" class="text-xs text-white/90 mt-2 text-center font-medium"></p>
         </div>
     </div>
@@ -729,4 +924,5 @@
     <!-- Presentation Engine Script -->
     <script src="script.js"></script>
 </body>
+
 </html>

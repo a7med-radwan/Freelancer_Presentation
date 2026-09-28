@@ -30,7 +30,8 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -39,7 +40,7 @@ html, body {
 body {
     background-color: var(--bg-canvas);
     color: var(--text-primary);
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Alexandria', 'Tajawal', sans-serif;
     position: relative;
     user-select: none;
 }
@@ -54,8 +55,8 @@ body {
     visibility: hidden;
     transform: translateX(20px) scale(0.99);
     transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                visibility 0.35s;
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0.35s;
     overflow: hidden;
     pointer-events: none;
 }
@@ -205,8 +206,13 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes scaleUp {
@@ -214,6 +220,7 @@ body {
         opacity: 0;
         transform: scale(0.96);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -227,4 +234,128 @@ body {
 /* Keypad keys */
 kbd {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================================
+   COMPREHENSIVE RESPONSIVE STYLES (ALL DEVICES)
+   Mobile (< 640px), Tablet (640px - 1023px), Desktop (>= 1024px)
+   ======================================================== */
+
+/* Custom Smooth Scrollbar for Mobile/Tablet Views */
+.slide-section::-webkit-scrollbar {
+    width: 5px;
+}
+
+.slide-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.slide-section::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+
+.slide-section::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-violet);
+}
+
+/* Tablet & Mobile Screens (< 1024px) */
+@media (max-width: 1023px) {
+    html, body {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    main {
+        height: calc(100vh - 4rem - 0.25rem - 4rem) !important;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .slide-section {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        padding-top: 0.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .slide-section > div {
+        height: auto !important;
+        min-height: 100%;
+        justify-content: flex-start !important;
+        padding-top: 0.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .deck-card {
+        height: auto !important;
+        max-height: none !important;
+        min-height: auto !important;
+        padding: 1.1rem 1.25rem !important;
+        border-radius: 1.1rem !important;
+        gap: 0.75rem;
+    }
+
+    .image-showcase-container {
+        min-height: 220px;
+        max-height: 340px;
+        width: 100%;
+    }
+
+    .image-showcase-container img {
+        max-height: 320px;
+    }
+}
+
+/* Small Mobile Screens (< 640px) */
+@media (max-width: 639px) {
+    header {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        height: 3.5rem !important;
+    }
+
+    footer {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+        height: 3.75rem !important;
+    }
+
+    main {
+        height: calc(100vh - 3.5rem - 0.25rem - 3.75rem) !important;
+    }
+
+    .deck-card {
+        padding: 0.95rem 1rem !important;
+    }
+
+    .pitch-point {
+        font-size: 0.85rem !important;
+        padding: 0.5rem 0.75rem !important;
+    }
+
+    .tab-pill-btn {
+        font-size: 0.75rem !important;
+        padding: 0.3rem 0.65rem !important;
+    }
+
+    .image-showcase-container {
+        min-height: 180px;
+        max-height: 260px;
+    }
+
+    .image-showcase-container img {
+        max-height: 240px;
+    }
+
+    /* Modal responsiveness */
+    .modal-overlay > div {
+        margin: 0.75rem !important;
+        padding: 1.1rem !important;
+        max-height: 88vh !important;
+    }
 }

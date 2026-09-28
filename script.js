@@ -112,6 +112,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
+    // 3. MOBILE TOUCH SWIPE GESTURES
+    // ==========================================
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+    const minSwipeDistance = 45;
+
+    document.addEventListener('touchstart', (e) => {
+        const activeModal = document.querySelector('.modal-overlay:not(.hidden)');
+        if (activeModal) return;
+        if (e.changedTouches && e.changedTouches.length > 0) {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+        const activeModal = document.querySelector('.modal-overlay:not(.hidden)');
+        if (activeModal) return;
+        if (e.changedTouches && e.changedTouches.length > 0) {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipeGesture();
+        }
+    }, { passive: true });
+
+    function handleSwipeGesture() {
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+
+        // Ensure horizontal swipe is dominant over vertical scroll
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+            // Swipe Left (deltaX < 0) -> Next slide
+            // Swipe Right (deltaX > 0) -> Prev slide
+            if (deltaX < 0) {
+                window.nextSlide();
+            } else {
+                window.prevSlide();
+            }
+        }
+    }
+
+    // ==========================================
     // 4. ANIMATED STATS COUNTER (SLIDE 2)
     // ==========================================
     let countersAnimated = false;
